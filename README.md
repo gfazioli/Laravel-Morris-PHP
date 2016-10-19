@@ -5,14 +5,17 @@
 [![Latest Unstable Version](https://poser.pugx.org/gfazioli/laravel-morris-php/v/unstable.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php) 
 [![License](https://poser.pugx.org/gfazioli/laravel-morris-php/license.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php)
 
-This project is a Laravel Service provider porting of [Morris.js]( http://morrisjs.github.io/morris.js/ ).
-
-You can use this PHP class to wrap the Morris Javascript class
+Laravel Morris PHP is the version for Laravel of [MorrisPHP](https://github.com/gfazioli/morris-php)
+With this Service Provider, you can draw amazing char by usign [Morris.js]( http://morrisjs.github.io/morris.js/ ).
 
 ## Requirements
 
 * PHP 5.5.9 or greater
 * Laravel 5.2 or greater
+
+## Installation
+
+    composer require gfazioli/laravel-morris-php
 
 ## Laravel
 
@@ -35,6 +38,19 @@ and then add the facade to your `aliases` array
   'Morris' => gfazioli\Morris\Facades\MorrisFacade::class,
 ],
 ```
+
+## HTML
+
+Remember to include the following Javascript and styles before use Morris.
+
+```html
+  <!-- Morris -->
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
+```
+
 
 ## Examples
 

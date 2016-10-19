@@ -1,6 +1,6 @@
 {
   "name": "gfazioli/laravel-morris-php",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/gfazioli/laravel-morris-php",
   "license": "MIT",
   "type": "library",
@@ -29,7 +29,7 @@
   "minimum-stability": "stable",
   "autoload": {
     "psr-4": {
-      "gfazioli\\laravel-morris-php\\": "src/"
+      "gfazioli\\Morris\\": "src/"
     }
   },
   "prefer-stable": "true",

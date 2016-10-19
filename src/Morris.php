@@ -1,180 +1,63 @@
 <?php
 
-namespace MorrisPHP;
+namespace gfazioli\Morris;
 
-/**
- * Model class constanst with Morris Chart types
- *
- * @class           MorrisChartType
- * @author          =undo= <info@wpxtre.me>
- * @copyright       Copyright (C) 2012-2014 wpXtreme Inc. All Rights Reserved.
- * @date            2014-04-09
- * @version         1.0.0
- *
- */
-class ChartTypes {
+use Log;
+use gfazioli\Morris\Morris\Area;
+use gfazioli\Morris\Morris\Bar;
+use gfazioli\Morris\Morris\Donut;
+use gfazioli\Morris\Morris\Line;
 
-  const LINE  = 'Line';
-  const BAR   = 'Bar';
-  const DONUT = 'Donut';
-  const AREA  = 'Area';
-}
-
-/**
- * Main Morris model class
- *
- * @class           MorrisCharts
- * @author          =undo= <info@wpxtre.me>
- * @copyright       Copyright (C) 2012-2014 wpXtreme Inc. All Rights Reserved.
- * @date            2014-04-01
- * @version         1.0.0
- *
- */
-class Morris {
-
+class Morris
+{
   /**
-   * Type of chart. This value is used in Javascript Morris method
+   * Create an instance of Morris Area class
    *
-   * @brief Chart
+   * @param string $elementID The element id
    *
-   * @var string $__chart_type
+   * @return Area
    */
-  protected $__chart_type = ChartTypes::LINE;
-
-  /**
-   * The ID of (or a reference to) the element into which to insert the graph.
-   * Note: this element must have a width and height defined in its styling.
-   *
-   * @brief Element
-   *
-   * @var string $element
-   */
-  public $element = '';
-
-  /**
-   * The data to plot. This is an array of objects, containing x and y attributes as described by the xkey and ykeys options.
-   * Note: the order in which you provide the data is the order in which the bars are displayed.
-   *
-   * Note 2: if you need to update the plot, use the setData method on the object that Morris.Bar
-   * returns (the same as with line charts).
-   *
-   * @brief Data
-   *
-   * @var array $data
-   */
-  public $data = array();
-
-  /**
-   * Return a singleton instance of Morris class
-   *
-   * @brief Singleton
-   *
-   * @return Morris
-   */
-  public static function init( $element_id )
+  public function Area( $elementID )
   {
-    static $instance = null;
-    if ( is_null( $instance ) ) {
-      $instance = new self( $element_id );
-    }
-
-    return $instance;
+    return new Area( $elementID );
   }
 
   /**
-   * Create an instance of Morris class
+   * Create an instance of Morris Bar class
    *
-   * @brief Construct
+   * @param string $elementID The element id
    *
-   * @param string $element_id The element id
-   * @param string $chart      Optional. Chart Type of chart. Default ChartTypes::LINE
-   *
-   * @return Morris
+   * @return Bar
    */
-  public function __construct( $element_id, $chart = ChartTypes::LINE )
+  public function Bar( $elementID )
   {
-    $this->element      = $element_id;
-    $this->__chart_type = $chart;
+    return new Bar( $elementID );
   }
 
   /**
-   * Return the array of this object
+   * Create an instance of Morris Donut class
    *
-   * @brief Array
+   * @param string $elementID The element id
    *
-   * @return array
+   * @return Donut
    */
-  public function toArray()
+  public function Donut( $elementID )
   {
-    $return = array();
-    foreach ( $this as $property => $value ) {
-      if ( '__' == substr( $property, 0, 2 ) || '' === $value || is_null( $value ) || ( is_array( $value ) && empty( $value ) ) ) {
-        continue;
-      }
-      $return[ $property ] = $value;
-    }
-
-    return $return;
+    return new Donut( $elementID );
   }
 
   /**
-   * Return the jSON encode of this chart
+   * Create an instance of Morris Line class
    *
-   * @brief JSON
+   * @param string $elementID The element id
    *
-   * @return string
+   * @return Line
    */
-  public function toJSON()
+  public function line( $elementID )
   {
-    return json_encode( $this->toArray() );
+    return new Line( $elementID );
   }
 
-  /**
-   * Return the HTML markup for Javascript code
-   *
-   * @brief Brief
-   * @return string
-   */
-  public function toJavascript()
-  {
-    ob_start();
-    ?>
-    <script type="text/javascript">
-      jQuery( function ( $ )
-      {
-        "use strict";
 
-        Morris.<?php echo $this->__chart_type ?>(
-          <?php echo $this->toJSON() ?>
-          );
-      });
-    </script>
-    <?php
-    $buffer = ob_get_contents();
-    ob_end_clean();
-
-    return $buffer;
-  }
-
-  public function __toString()
-  {
-    ob_start();
-    ?>
-    <script type="text/javascript">
-      jQuery( function ( $ )
-      {
-        "use strict";
-
-        Morris.<?php echo $this->__chart_type ?>(
-          <?php echo $this->toJSON() ?>
-          );
-      });
-    </script>
-    <?php
-    $buffer = ob_get_contents();
-    ob_end_clean();
-
-    return $buffer;
-  }
 
 }

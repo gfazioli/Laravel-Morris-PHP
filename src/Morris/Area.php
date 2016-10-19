@@ -1,9 +1,9 @@
 <?php
 
-namespace MorrisPHP;
+namespace gfazioli\Morris\Morris;
 
-use MorrisPHP\Charts;
-use MorrisPHP\ChartTypes;
+use gfazioli\Morris\Morris\Chart;
+use gfazioli\Morris\Morris\ChartTypes;
 
 /**
  * Morris Area Charts
@@ -15,7 +15,7 @@ use MorrisPHP\ChartTypes;
  * @version         1.0.0
  *
  */
-class Area extends Charts {
+class Area extends Chart {
 
   /**
    * Change the opacity of the area fill colour.
@@ -25,7 +25,7 @@ class Area extends Charts {
    *
    * @var string $fillOpacity
    */
-  public $fillOpacity = 'auto';
+  protected $fillOpacity = 'auto';
 
   /**
    * Set to true to overlay the areas on top of each other instead of stacking them.
@@ -34,7 +34,7 @@ class Area extends Charts {
    *
    * @var bool $behaveLikeLine
    */
-  public $behaveLikeLine = false;
+  protected $behaveLikeLine = false;
 
   /**
    * Create an instance of MorrisAreaCharts class

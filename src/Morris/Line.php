@@ -1,10 +1,9 @@
 <?php
 
-namespace MorrisPHP;
+namespace gfazioli\Morris\Morris;
 
-use MorrisPHP\Charts;
-use MorrisPHP\ChartTypes;
-
+use gfazioli\Morris\Morris\Chart;
+use gfazioli\Morris\Morris\ChartTypes;
 /**
  * Morris Line Charts
  *
@@ -15,7 +14,7 @@ use MorrisPHP\ChartTypes;
  * @version         1.0.0
  *
  */
-class Line extends Charts {
+class Line extends Chart {
 
   /**
    * Array containing colors for the series lines/points.
@@ -24,7 +23,7 @@ class Line extends Charts {
    *
    * @var array $lineColors
    */
-  public $lineColors = array( '#0b62a4', '#7A92A3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed' );
+  protected $lineColors = array( '#0b62a4', '#7A92A3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed' );
 
   /**
    * Width of the series lines, in pixels.
@@ -33,7 +32,7 @@ class Line extends Charts {
    *
    * @var int $lineWidth
    */
-  public $lineWidth = 3;
+  protected $lineWidth = 3;
 
   /**
    * Diameter of the series points, in pixels.
@@ -42,7 +41,7 @@ class Line extends Charts {
    *
    * @var int $pointSize
    */
-  public $pointSize = 4;
+  protected $pointSize = 4;
 
   /**
    * Colors for the series points. By default uses the same values as lineColors
@@ -51,7 +50,7 @@ class Line extends Charts {
    *
    * @var array $pointFillColors
    */
-  public $pointFillColors = array();
+  protected $pointFillColors = array();
 
   /**
    * Colors for the outlines of the series points. (#ffffff by default).
@@ -60,7 +59,7 @@ class Line extends Charts {
    *
    * @var array $pointStrokeColors
    */
-  public $pointStrokeColors = array();
+  protected $pointStrokeColors = array();
 
   /**
    * Set to false to disable line smoothing.
@@ -69,7 +68,7 @@ class Line extends Charts {
    *
    * @var bool smooth
    */
-  public $smooth = true;
+  protected $smooth = true;
 
   /**
    * A function that accepts millisecond timestamps and formats them for display as chart labels.
@@ -79,7 +78,7 @@ class Line extends Charts {
    *
    * @var string $dateFormat
    */
-  public $dateFormat = '';
+  protected $dateFormat = '';
 
   /**
    * Sets the x axis labelling interval. By default the interval will be automatically computed.
@@ -105,7 +104,7 @@ class Line extends Charts {
    *
    * @var array $xLabels
    */
-  public $xLabels = array();
+  protected $xLabels = array();
 
   /**
    * A function that accepts Date objects and formats them for display as x-axis labels. Overrides the default formatter
@@ -117,7 +116,7 @@ class Line extends Charts {
    *
    * @var string $xLabelFormat
    */
-  public $xLabelFormat = '';
+  protected $xLabelFormat = '';
 
   /**
    * A function that accepts y-values and formats them for display as y-axis labels.
@@ -128,7 +127,7 @@ class Line extends Charts {
    *
    * @var string $yLabelFormat
    */
-  public $yLabelFormat = '';
+  protected $yLabelFormat = '';
 
   /**
    * When set to false (the default), all null and undefined values in a data series will be ignored and lines will be
@@ -142,6 +141,6 @@ class Line extends Charts {
    *
    * @var bool $continuousLine
    */
-  public $continuousLine = false;
+  protected $continuousLine = false;
 
 }

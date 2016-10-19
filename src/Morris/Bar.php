@@ -1,9 +1,9 @@
 <?php
 
-namespace MorrisPHP;
+namespace gfazioli\Morris\Morris;
 
-use MorrisPHP\Charts;
-use MorrisPHP\ChartTypes;
+use gfazioli\Morris\Morris\Chart;
+use gfazioli\Morris\Morris\ChartTypes;
 
 /**
  * Morris Bar Charts
@@ -15,17 +15,17 @@ use MorrisPHP\ChartTypes;
  * @version         1.0.0
  *
  */
-class Bar extends Charts {
+class Bar extends Chart {
 
-  public $barSizeRatio = 0.75;
+  protected $barSizeRatio = 0.75;
 
-  public $barGap = 3;
+  protected $barGap = 3;
 
-  public $barOpacity = 1.0;
+  protected $barOpacity = 1.0;
 
-  public $barRadius = array( 0, 0, 0, 0 );
+  protected $barRadius = array( 0, 0, 0, 0 );
 
-  public $xLabelMargin = 50;
+  protected $xLabelMargin = 50;
 
   /**
    * Array containing colors for the series bars.
@@ -34,7 +34,7 @@ class Bar extends Charts {
    *
    * @var array $barColors
    */
-  public $barColors = array(
+  protected $barColors = array(
     '#0b62a4',
     '#7a92a3',
     '#4da74d',
@@ -51,7 +51,7 @@ class Bar extends Charts {
    *
    * @var bool $stacked
    */
-  public $stacked = true;
+  protected $stacked = true;
 
   /**
    * Create an instance of MorrisBarCharts class

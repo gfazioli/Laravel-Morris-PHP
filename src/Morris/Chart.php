@@ -1,8 +1,8 @@
 <?php
 
-namespace MorrisPHP;
+namespace gfazioli\Morris\Morris;
 
-use MorrisPHP\Morris;
+use gfazioli\Morris\Morris\MorrisBase;
 
 /**
  * Morris Charts common model
@@ -14,7 +14,7 @@ use MorrisPHP\Morris;
  * @version         1.0.0
  *
  */
-class Charts extends Morris {
+class Chart extends MorrisBase {
 
   /**
    * A string containing the name of the attribute that contains date (X) values.
@@ -35,7 +35,7 @@ class Charts extends Morris {
    *
    * @var array $xkey
    */
-  public $xkey = array();
+  protected $xkey = array();
 
   /**
    * A list of strings containing names of attributes that contain Y values (one for each series of data to be plotted).
@@ -44,7 +44,7 @@ class Charts extends Morris {
    *
    * @var array $ykeys
    */
-  public $ykeys = array();
+  protected $ykeys = array();
 
   /**
    * A list of strings containing labels for the data series to be plotted (corresponding to the values in the ykeys option).
@@ -53,7 +53,7 @@ class Charts extends Morris {
    *
    * @var array $labels
    */
-  public $labels = array();
+  protected $labels = array();
 
   /**
    * Max. bound for Y-values. Alternatively, set this to 'auto' to compute automatically, or 'auto [num]' to
@@ -63,7 +63,7 @@ class Charts extends Morris {
    *
    * @var string $ymax
    */
-  public $ymax = 'auto';
+  protected $ymax = 'auto';
 
   /**
    * Min. bound for Y-values. Alternatively, set this to 'auto' to compute automatically, or 'auto [num]' to
@@ -74,7 +74,7 @@ class Charts extends Morris {
    *
    * @var string $ymin
    */
-  public $ymin = 0;
+  protected $ymin = 0;
 
   /**
    * Set to false to always show a hover legend.
@@ -85,7 +85,7 @@ class Charts extends Morris {
    *
    * @var string
    */
-  public $hideHover = 'auto';
+  protected $hideHover = 'auto';
 
   /**
    * Provide a function on this option to generate custom hover legends. The function will be called with the index of
@@ -103,7 +103,7 @@ class Charts extends Morris {
    *
    * @var string $hoverCallback
    */
-  public $hoverCallback = '';
+  protected $hoverCallback = '';
 
   /**
    * Set to false to disable drawing the x and y axes.
@@ -112,7 +112,7 @@ class Charts extends Morris {
    *
    * @var bool $axes
    */
-  public $axes = true;
+  protected $axes = true;
 
   /**
    * Set to false to disable drawing the horizontal grid lines.
@@ -121,7 +121,7 @@ class Charts extends Morris {
    *
    * @var bool $grid
    */
-  public $grid = true;
+  protected $grid = true;
 
   /**
    * Set the color of the axis labels (default: #888).
@@ -130,7 +130,7 @@ class Charts extends Morris {
    *
    * @var string $gridTextColor
    */
-  public $gridTextColor = '#888';
+  protected $gridTextColor = '#888';
 
   /**
    * Set the point size of the axis labels (default: 12).
@@ -139,7 +139,7 @@ class Charts extends Morris {
    *
    * @var int $gridTextSize
    */
-  public $gridTextSize = '12';
+  protected $gridTextSize = '12';
 
   /**
    * Set the font family of the axis labels (default: sans-serif).
@@ -148,7 +148,7 @@ class Charts extends Morris {
    *
    * @var string $gridTextFamily
    */
-  public $gridTextFamily = 'sans-serif';
+  protected $gridTextFamily = 'sans-serif';
 
   /**
    * Set the font weight of the axis labels (default: normal).
@@ -157,7 +157,7 @@ class Charts extends Morris {
    *
    * @var string $gridTextWeight
    */
-  public $gridTextWeight = 'normal';
+  protected $gridTextWeight = 'normal';
 
   /**
    * Set to true to enable automatic resizing when the containing element resizes. (default: false).
@@ -169,12 +169,12 @@ class Charts extends Morris {
    *
    * @var bool $resize
    */
-  public $resize = false;
+  protected $resize = false;
 
-  public $rangeSelect =  null;
-  public $rangeSelectColor = '#eef';
-  public $padding = 25;
-  public $numLines = 5;
+  protected $rangeSelect =  null;
+  protected $rangeSelectColor = '#eef';
+  protected $padding = 25;
+  protected $numLines = 5;
 
   /**
    * A list of x-values to draw as vertical 'event' lines on the chart.
@@ -185,7 +185,7 @@ class Charts extends Morris {
    *
    * @var array $events
    */
-  public $events = array();
+  protected $events = array();
 
   /**
    * Width, in pixels, of the event lines.
@@ -194,7 +194,7 @@ class Charts extends Morris {
    *
    * @var int $eventStrokeWidth
    */
-  public $eventStrokeWidth = 1;
+  protected $eventStrokeWidth = 1;
 
   /**
    * Array of color values to use for the event line colors. If you list fewer colors here than you have lines in
@@ -204,7 +204,7 @@ class Charts extends Morris {
    *
    * @var array $eventLineColors
    */
-  public $eventLineColors = array( '#005a04', '#ccffbb', '#3a5f0b', '#005502' );
+  protected $eventLineColors = array( '#005a04', '#ccffbb', '#3a5f0b', '#005502' );
 
   /**
    * A list of y-values to draw as horizontal 'goal' lines on the chart.
@@ -215,7 +215,7 @@ class Charts extends Morris {
    *
    * @var array $goals
    */
-  public $goals = array();
+  protected $goals = array();
 
   /**
    * Width, in pixels, of the goal lines.
@@ -224,7 +224,7 @@ class Charts extends Morris {
    *
    * @var int $goalStrokeWidth
    */
-  public $goalStrokeWidth = 1;
+  protected $goalStrokeWidth = 1;
 
   /**
    * Array of color values to use for the goal line colors. If you list fewer colors here than you have lines in goals,
@@ -234,7 +234,7 @@ class Charts extends Morris {
    *
    * @var array $goalLineColors
    */
-  public $goalLineColors = array( '#666633', '#999966', '#cc6666', '#663333' );
+  protected $goalLineColors = array( '#666633', '#999966', '#cc6666', '#663333' );
 
   /**
    * Set to false to skip time/date parsing for X values, instead treating them as an equally-spaced series.
@@ -243,7 +243,7 @@ class Charts extends Morris {
    *
    * @var bool $parseTime
    */
-  public $parseTime = true;
+  protected $parseTime = true;
 
   /**
    * Set to a string value (eg: '%') to add a label suffix all y-labels.
@@ -252,7 +252,7 @@ class Charts extends Morris {
    *
    * @var string $postUnits
    */
-  public $postUnits = '';
+  protected $postUnits = '';
 
   /**
    * Set to a string value (eg: '$') to add a label prefix all y-labels.
@@ -261,7 +261,7 @@ class Charts extends Morris {
    *
    * @var string $preUnits
    */
-  public $preUnits = '';
+  protected $preUnits = '';
 
   /**
    * Angle of x label
@@ -270,6 +270,6 @@ class Charts extends Morris {
    *
    * @var int $xLabelAngle
    */
-  public $xLabelAngle = 0;
+  protected $xLabelAngle = 0;
 
 }

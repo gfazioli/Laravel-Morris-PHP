@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Laravel-morris-php by gfazioli</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Laravel-morris-php</h1>
+      <h2 class="project-tagline"></h2>
+      <a href="https://github.com/gfazioli/Laravel-Morris-PHP" class="btn">View on GitHub</a>
+      <a href="https://github.com/gfazioli/Laravel-Morris-PHP/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/gfazioli/Laravel-Morris-PHP/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="laravel-morris-php" class="anchor" href="#laravel-morris-php" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Laravel Morris PHP</h1>
+
+<p><a href="https://packagist.org/packages/gfazioli/morris-php"><img src="https://poser.pugx.org/gfazioli/morris-php/version.svg" alt="Latest Stable Version"></a> 
+<a href="https://packagist.org/packages/gfazioli/morris-php"><img src="https://poser.pugx.org/gfazioli/morris-php/downloads.svg" alt="Total Downloads"></a> 
+<a href="https://packagist.org/packages/gfazioli/morris-php"><img src="https://poser.pugx.org/gfazioli/morris-php/v/unstable.svg" alt="Latest Unstable Version"></a> 
+<a href="https://packagist.org/packages/gfazioli/morris-php"><img src="https://poser.pugx.org/gfazioli/morris-php/license.svg" alt="License"></a></p>
+
+<p>This project is a Laravel Service provider porting of <a href="http://morrisjs.github.io/morris.js/">Morris.js</a>.</p>
+
+<p>You can use this PHP class to wrap the Morris Javascript class</p>
+
+<h2>
+<a id="requirements" class="anchor" href="#requirements" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Requirements</h2>
+
+<ul>
+<li>PHP 5.5.9 or greater</li>
+<li>Laravel 5.2 or greater</li>
+</ul>
+
+<h2>
+<a id="laravel" class="anchor" href="#laravel" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Laravel</h2>
+
+<p>We include service providers and a facade for easy integration and a nice syntax for Laravel.</p>
+
+<p>Firstly, add the <code>gfazioli\Morris\MorrisServiceProvider</code> provider to the providers array in <code>config/app.php</code></p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>providers<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">  <span class="pl-k">...</span></span>
+<span class="pl-s1">  <span class="pl-c1">gfazioli\Morris\</span><span class="pl-c1">MorrisServiceProvider</span><span class="pl-k">::</span><span class="pl-c1">class</span>,</span>
+<span class="pl-s1">],</span></pre></div>
+
+<p>and then add the facade to your <code>aliases</code> array</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-s1"><span class="pl-s"><span class="pl-pds">'</span>aliases<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> [</span>
+<span class="pl-s1">  <span class="pl-k">...</span></span>
+<span class="pl-s1">  <span class="pl-s"><span class="pl-pds">'</span>Morris<span class="pl-pds">'</span></span> <span class="pl-k">=&gt;</span> <span class="pl-c1">gfazioli\Morris\Facades\</span><span class="pl-c1">MorrisFacade</span><span class="pl-k">::</span><span class="pl-c1">class</span>,</span>
+<span class="pl-s1">],</span></pre></div>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<div class="highlight highlight-text-html-basic"><pre>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>morris-area<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+
+&lt;?php
+
+echo Morris::area( 'morris-area' )
+           -&gt;xkey( [ 'y' ] )
+           -&gt;ykeys( [ 'a', 'b' ] )
+           -&gt;labels( [ 'Series A', 'Series B' ] )
+           -&gt;data( [
+                     [ "y" =&gt; '2006', "a" =&gt; 100, "b" =&gt; 90 ],
+                     [ "y" =&gt; '2007', "a" =&gt; 75, "b" =&gt; 65 ],
+                     [ "y" =&gt; '2008', "a" =&gt; 50, "b" =&gt; 40 ],
+                     [ "y" =&gt; '2009', "a" =&gt; 75, "b" =&gt; 65 ],
+                     [ "y" =&gt; '2010', "a" =&gt; 50, "b" =&gt; 40 ],
+                     [ "y" =&gt; '2011', "a" =&gt; 75, "b" =&gt; 65 ],
+                     [ "y" =&gt; '2012', "a" =&gt; 100, "b" =&gt; 90 ]
+                   ] );
+</pre></div>
+
+<div class="highlight highlight-text-html-basic"><pre>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>morris-bar<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;?php
+
+echo Morris::bar( 'morris-bar' )
+           -&gt;xkey( [ 'y' ] )
+           -&gt;ykeys( [ 'a', 'b' ] )
+           -&gt;labels( [ 'Series A', 'Series B' ] )
+           -&gt;data( [
+                     [ "y" =&gt; '2006', "a" =&gt; 100, "b" =&gt; 90 ],
+                     [ "y" =&gt; '2007', "a" =&gt; 75, "b" =&gt; 65 ],
+                     [ "y" =&gt; '2008', "a" =&gt; 50, "b" =&gt; 40 ],
+                     [ "y" =&gt; '2009', "a" =&gt; 75, "b" =&gt; 65 ],
+                     [ "y" =&gt; '2010', "a" =&gt; 50, "b" =&gt; 40 ],
+                     [ "y" =&gt; '2011', "a" =&gt; 75, "b" =&gt; 65 ],
+                     [ "y" =&gt; '2012', "a" =&gt; 100, "b" =&gt; 90 ]
+                   ] );
+</pre></div>
+
+<div class="highlight highlight-text-html-basic"><pre>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>morris-donut<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;?php
+
+echo Morris::donut( 'morris-donut' )
+           -&gt;data( [
+                     [ "label" =&gt; "Download Sales", "value" =&gt; 12 ],
+                     [ "label" =&gt; "In-Store Sales", "value" =&gt; 30 ],
+                     [ "label" =&gt; "Mail-Order Sales", "value" =&gt; 20 ]
+                   ] );
+</pre></div>
+
+<div class="highlight highlight-text-html-basic"><pre>
+&lt;<span class="pl-ent">div</span> <span class="pl-e">id</span>=<span class="pl-s"><span class="pl-pds">"</span>morris-line<span class="pl-pds">"</span></span>&gt;&lt;/<span class="pl-ent">div</span>&gt;
+&lt;?php
+
+echo Morris::line( 'morris-line' )
+           -&gt;xkey( [ 'date' ] )
+           -&gt;ykeys( [ 'value' ] )
+           -&gt;labels( [ 'Money' ] )
+           -&gt;data( [
+                     [ 'date' =&gt; '2010', 'value' =&gt; 88 ],
+                     [ 'date' =&gt; '2011', 'value' =&gt; 18 ],
+                     [ 'date' =&gt; '2012', 'value' =&gt; 28 ],
+                     [ 'date' =&gt; '2013', 'value' =&gt; 48 ],
+                   ] );
+</pre></div>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/gfazioli/Laravel-Morris-PHP">Laravel-morris-php</a> is maintained by <a href="https://github.com/gfazioli">gfazioli</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>

@@ -1,9 +1,9 @@
 # Laravel Morris PHP
 
-[![Latest Stable Version](https://poser.pugx.org/gfazioli/morris-php/version.svg)](https://packagist.org/packages/gfazioli/morris-php) 
-[![Total Downloads](https://poser.pugx.org/gfazioli/morris-php/downloads.svg)](https://packagist.org/packages/gfazioli/morris-php) 
-[![Latest Unstable Version](https://poser.pugx.org/gfazioli/morris-php/v/unstable.svg)](https://packagist.org/packages/gfazioli/morris-php) 
-[![License](https://poser.pugx.org/gfazioli/morris-php/license.svg)](https://packagist.org/packages/gfazioli/morris-php)
+[![Latest Stable Version](https://poser.pugx.org/gfazioli/laravel-morris-php/version.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php) 
+[![Total Downloads](https://poser.pugx.org/gfazioli/laravel-morris-php/downloads.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php) 
+[![Latest Unstable Version](https://poser.pugx.org/gfazioli/laravel-morris-php/v/unstable.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php) 
+[![License](https://poser.pugx.org/gfazioli/laravel-morris-php/license.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php)
 
 This project is a Laravel Service provider porting of [Morris.js]( http://morrisjs.github.io/morris.js/ ).
 

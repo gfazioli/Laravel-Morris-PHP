@@ -6,13 +6,6 @@ use gfazioli\Morris\Morris\Chart;
 use gfazioli\Morris\Morris\ChartTypes;
 /**
  * Morris Line Charts
- *
- * @class           MorrisLine
- * @author          =undo= <info@wpxtre.me>
- * @copyright       Copyright (C) 2012-2014 wpXtreme Inc. All Rights Reserved.
- * @date            2014-04-01
- * @version         1.0.0
- *
  */
 class Line extends Chart {
 

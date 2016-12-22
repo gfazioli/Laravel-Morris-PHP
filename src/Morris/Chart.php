@@ -7,11 +7,13 @@ use gfazioli\Morris\Morris\MorrisBase;
 /**
  * Morris Charts common model
  */
-class Chart extends MorrisBase {
+class Chart extends MorrisBase
+{
 
   /**
    * A string containing the name of the attribute that contains date (X) values.
-   * Timestamps are accepted in the form of millisecond timestamps (as returned by Date.getTime() or as strings in the following formats:
+   * Timestamps are accepted in the form of millisecond timestamps (as returned by Date.getTime() or as strings in the
+   * following formats:
    * 2012
    * 2012 Q1
    * 2012 W1
@@ -22,13 +24,14 @@ class Chart extends MorrisBase {
    * 2012-02-24 15:00:00.000
    *
    * Note: when using millisecond timestamps, it's recommended that you check out the dateFormat option.
-   * Note 2: date/time strings can optionally contain a T between the date and time parts, and/or a Z suffix, for compatibility with ISO-8601 dates.
+   * Note 2: date/time strings can optionally contain a T between the date and time parts, and/or a Z suffix, for
+   * compatibility with ISO-8601 dates.
    *
    * @brief XKeys
    *
    * @var array $xkey
    */
-  protected $xkey = array();
+  protected $xkey = [];
 
   /**
    * A list of strings containing names of attributes that contain Y values (one for each series of data to be plotted).
@@ -37,16 +40,17 @@ class Chart extends MorrisBase {
    *
    * @var array $ykeys
    */
-  protected $ykeys = array();
+  protected $ykeys = [];
 
   /**
-   * A list of strings containing labels for the data series to be plotted (corresponding to the values in the ykeys option).
+   * A list of strings containing labels for the data series to be plotted (corresponding to the values in the ykeys
+   * option).
    *
    * @brief Labels
    *
    * @var array $labels
    */
-  protected $labels = array();
+  protected $labels = [];
 
   /**
    * Max. bound for Y-values. Alternatively, set this to 'auto' to compute automatically, or 'auto [num]' to
@@ -164,10 +168,10 @@ class Chart extends MorrisBase {
    */
   protected $resize = false;
 
-  protected $rangeSelect =  null;
+  protected $rangeSelect      = null;
   protected $rangeSelectColor = '#eef';
-  protected $padding = 25;
-  protected $numLines = 5;
+  protected $padding          = 25;
+  protected $numLines         = 5;
 
   /**
    * A list of x-values to draw as vertical 'event' lines on the chart.
@@ -178,7 +182,7 @@ class Chart extends MorrisBase {
    *
    * @var array $events
    */
-  protected $events = array();
+  protected $events = [];
 
   /**
    * Width, in pixels, of the event lines.
@@ -197,7 +201,7 @@ class Chart extends MorrisBase {
    *
    * @var array $eventLineColors
    */
-  protected $eventLineColors = array( '#005a04', '#ccffbb', '#3a5f0b', '#005502' );
+  protected $eventLineColors = [ '#005a04', '#ccffbb', '#3a5f0b', '#005502' ];
 
   /**
    * A list of y-values to draw as horizontal 'goal' lines on the chart.
@@ -208,7 +212,7 @@ class Chart extends MorrisBase {
    *
    * @var array $goals
    */
-  protected $goals = array();
+  protected $goals = [];
 
   /**
    * Width, in pixels, of the goal lines.
@@ -227,7 +231,7 @@ class Chart extends MorrisBase {
    *
    * @var array $goalLineColors
    */
-  protected $goalLineColors = array( '#666633', '#999966', '#cc6666', '#663333' );
+  protected $goalLineColors = [ '#666633', '#999966', '#cc6666', '#663333' ];
 
   /**
    * Set to false to skip time/date parsing for X values, instead treating them as an equally-spaced series.

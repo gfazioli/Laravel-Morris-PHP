@@ -15,5 +15,4 @@ class MorrisFacade extends Facade {
   {
     return 'gfazioli.morris';
   }
-
 }

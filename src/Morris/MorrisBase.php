@@ -58,14 +58,14 @@ class MorrisBase
    *
    * @brief Construct
    *
-   * @param string $element_id The element id
-   * @param string $chart      Optional. Chart Type of chart. Default ChartTypes::LINE
+   * @param string $elementId The element id
+   * @param string $chart     Optional. Chart Type of chart. Default ChartTypes::LINE
    *
    * @return MorrisBase
    */
-  public function __construct( $element_id, $chart = ChartTypes::LINE )
+  public function __construct( $elementId, $chart = ChartTypes::LINE )
   {
-    $this->element      = $element_id;
+    $this->element      = $elementId;
     $this->__chart_type = $chart;
   }
 
@@ -153,7 +153,7 @@ class MorrisBase
   {
     foreach ( $this as $key => $value ) {
       if ( $name == $key ) {
-        return $this->$key;
+        return $this->{$key};
       }
     }
 
@@ -170,11 +170,10 @@ class MorrisBase
   {
     foreach ( $this as $key => $value ) {
       if ( $name == $key ) {
-        $this->$key = $arguments[ 0 ];
+        $this->{$key} = $arguments[ 0 ];
 
         return $this;
       }
     }
   }
-
 }

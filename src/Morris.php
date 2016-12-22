@@ -57,7 +57,4 @@ class Morris
   {
     return new Line( $elementID );
   }
-
-
-
 }

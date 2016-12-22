@@ -25,5 +25,4 @@ class MorrisServiceProvider extends ServiceProvider
       return new Morris();
     } );
   }
-
 }

@@ -8,7 +8,8 @@ use gfazioli\Morris\Morris\ChartTypes;
 /**
  * Morris Bar Charts
  */
-class Bar extends Chart {
+class Bar extends Chart
+{
 
   protected $barSizeRatio = 0.75;
 
@@ -16,7 +17,7 @@ class Bar extends Chart {
 
   protected $barOpacity = 1.0;
 
-  protected $barRadius = array( 0, 0, 0, 0 );
+  protected $barRadius = [ 0, 0, 0, 0 ];
 
   protected $xLabelMargin = 50;
 
@@ -27,15 +28,15 @@ class Bar extends Chart {
    *
    * @var array $barColors
    */
-  protected $barColors = array(
+  protected $barColors = [
     '#0b62a4',
     '#7a92a3',
     '#4da74d',
     '#afd8f8',
     '#edc240',
     '#cb4b4b',
-    '#9440ed'
-  );
+    '#9440ed',
+  ];
 
   /**
    * Set to true to draw bars stacked vertically.
@@ -49,11 +50,11 @@ class Bar extends Chart {
   /**
    * Create an instance of MorrisBarCharts class
    *
-   * @param string $element_id The element id
+   * @param string $elementId The element id
    *
    */
-  public function __construct( $element_id )
+  public function __construct( $elementId )
   {
-    parent::__construct( $element_id, ChartTypes::BAR );
+    parent::__construct( $elementId, ChartTypes::BAR );
   }
 }

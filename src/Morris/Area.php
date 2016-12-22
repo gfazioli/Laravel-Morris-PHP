@@ -32,11 +32,11 @@ class Area extends Chart {
   /**
    * Create an instance of MorrisAreaCharts class
    *
-   * @param string $element_id The element id
+   * @param string $elementId The element id
    *
    */
-  public function __construct( $element_id )
+  public function __construct( $elementId )
   {
-    parent::__construct( $element_id, ChartTypes::AREA );
+    parent::__construct( $elementId, ChartTypes::AREA );
   }
 }

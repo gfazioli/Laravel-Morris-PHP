@@ -19,7 +19,7 @@ class Donut extends Chart
    *
    * @var array $colors
    */
-  protected $colors = array(
+  protected $colors = [
     '#0B62A4',
     '#3980B5',
     '#679DC6',
@@ -29,8 +29,8 @@ class Donut extends Chart
     '#095085',
     '#083E67',
     '#052C48',
-    '#042135'
-  );
+    '#042135',
+  ];
 
   /**
    * A function that will translate a y-value into a label for the centre of the donut.
@@ -54,12 +54,12 @@ class Donut extends Chart
    *
    * @brief Construct
    *
-   * @param string $element_id The element id
+   * @param string $elementId The element id
    *
    */
-  public function __construct( $element_id )
+  public function __construct( $elementId )
   {
-    parent::__construct( $element_id, ChartTypes::DONUT );
+    parent::__construct( $elementId, ChartTypes::DONUT );
   }
 
 }

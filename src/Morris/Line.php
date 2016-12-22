@@ -4,10 +4,12 @@ namespace gfazioli\Morris\Morris;
 
 use gfazioli\Morris\Morris\Chart;
 use gfazioli\Morris\Morris\ChartTypes;
+
 /**
  * Morris Line Charts
  */
-class Line extends Chart {
+class Line extends Chart
+{
 
   /**
    * Array containing colors for the series lines/points.
@@ -16,7 +18,7 @@ class Line extends Chart {
    *
    * @var array $lineColors
    */
-  protected $lineColors = array( '#0b62a4', '#7A92A3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed' );
+  protected $lineColors = [ '#0b62a4', '#7A92A3', '#4da74d', '#afd8f8', '#edc240', '#cb4b4b', '#9440ed' ];
 
   /**
    * Width of the series lines, in pixels.
@@ -43,7 +45,7 @@ class Line extends Chart {
    *
    * @var array $pointFillColors
    */
-  protected $pointFillColors = array();
+  protected $pointFillColors = [];
 
   /**
    * Colors for the outlines of the series points. (#ffffff by default).
@@ -52,7 +54,7 @@ class Line extends Chart {
    *
    * @var array $pointStrokeColors
    */
-  protected $pointStrokeColors = array();
+  protected $pointStrokeColors = [];
 
   /**
    * Set to false to disable line smoothing.
@@ -97,7 +99,7 @@ class Line extends Chart {
    *
    * @var array $xLabels
    */
-  protected $xLabels = array();
+  protected $xLabels = [];
 
   /**
    * A function that accepts Date objects and formats them for display as x-axis labels. Overrides the default formatter

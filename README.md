@@ -11,7 +11,7 @@ With this Service Provider, you can draw amazing char by usign [Morris.js]( http
 ## Requirements
 
 * PHP 5.5.9 or greater
-* Laravel 5.2 or greater
+* Laravel 5.4 or greater
 
 ## Installation
 
@@ -64,6 +64,7 @@ echo Morris::area( 'morris-area' )
            ->xkey( [ 'y' ] )
            ->ykeys( [ 'a', 'b' ] )
            ->labels( [ 'Series A', 'Series B' ] )
+           ->hoverCallback( 'function(index, options, content){var row = options.data[index];return "sin(" + row.x + ") = " + row.y;}' )
            ->data( [
                      [ "y" => '2006', "a" => 100, "b" => 90 ],
                      [ "y" => '2007', "a" => 75, "b" => 65 ],

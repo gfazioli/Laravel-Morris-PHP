@@ -53,6 +53,12 @@ class MorrisBase
    */
   protected $data = [];
 
+  protected $functions = [
+    'hoverCallback',
+    'formatter',
+    'dateFormat'
+  ];
+
   /**
    * Create an instance of Morris class
    *
@@ -83,6 +89,11 @@ class MorrisBase
       if ( '__' == substr( $property, 0, 2 ) || '' === $value || is_null( $value ) || ( is_array( $value ) && empty( $value ) ) ) {
         continue;
       }
+
+      if ( in_array( $property, $this->functions ) && substr( $value, 0, 8 ) == 'function' ) {
+        $value = "%{$property}%";
+      }
+
       $return[ $property ] = $value;
     }
 
@@ -98,7 +109,21 @@ class MorrisBase
    */
   public function toJSON()
   {
-    return json_encode( $this->toArray() );
+    $json = json_encode( $this->toArray() );
+
+    return str_replace(
+      [
+          '"%hoverCallback%"',
+          '"%formatter%"',
+          '"%dateFormat%"',
+      ],
+      [
+          $this->hoverCallback,
+          $this->formatter,
+          $this->dateFormat,
+      ],
+      $json
+    );
   }
 
   /**

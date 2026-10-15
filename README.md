@@ -5,6 +5,11 @@
 [![Latest Unstable Version](https://poser.pugx.org/gfazioli/laravel-morris-php/v/unstable.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php) 
 [![License](https://poser.pugx.org/gfazioli/laravel-morris-php/license.svg)](https://packagist.org/packages/gfazioli/laravel-morris-php)
 
+<div align="center">
+  <p><img src="https://raw.githubusercontent.com/gfazioli/gfazioli/master/glancecard/Laravel-Morris-PHP.svg" width="880" alt="Laravel-Morris-PHP at a glance, refreshed daily: commits, releases, stars, issues and pull requests, a year of commit activity, the weekly rhythm, languages, latest commits and releases, contributors" /><br>
+  <sub>Made with <a href="https://github.com/gfazioli/glancecard">glancecard</a> · refreshed daily</sub></p>
+</div>
+
 Laravel Morris PHP is the version for Laravel of [MorrisPHP](https://github.com/gfazioli/morris-php)
 With this Service Provider, you can draw amazing char by usign [Morris.js]( http://morrisjs.github.io/morris.js/ ).
 
